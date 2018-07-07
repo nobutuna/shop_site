@@ -20,6 +20,7 @@ $user= 'nobutuna';
 $password = 'Nobutuna9';
 
 $dbh = new PDO($dsn, $user, $password);
+$dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 $sql = 'INSERT INTO mst_staff(name,password) VALUES (?,?)';
 $stmt = $dbh->prepare($sql);
